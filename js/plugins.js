@@ -990,23 +990,15 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			
 			//console.log('getting', me.url + request )
 			
-			// $.getJSON( me.url + request, function(json){
-			// 	//console.log('request success', json);
-			// 	
-			// 	if( json.posts.length )
-			// 		$.each( json.posts, me.printPost );
-			// 	
-			// 	me.page += 1;
-			// });
+			$.getJSON( me.url + request, function(json){
+				console.log('request success', json);
+				
+				if( json.posts.length )
+					$.each( json.posts, me.printPost );
+				
+				me.page += 1;
+			});
 
-			$.ajax({
-			  url: me.url + request,
-			  cache: false,
-			  dataType: "json",
-			  success: function(data) {
-			    // Go do this, go do that…
-				console.log('request success', data);
-			}});
 		};
 
 		me.printPost = function(i, post){
