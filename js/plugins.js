@@ -219,7 +219,8 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		    	width: dim.playerWidth,
 		    	videoId: me.CURRENT_VIDEO.id,
 		    	events: {
-		    		'onReady': me.onPlayerReady
+		    		'onReady': me.onPlayerReady,
+					'onYouTubePlayerAPIReady': me.onPlayerReady
 		    	}
 		    }); 
 		};
