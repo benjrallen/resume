@@ -80,30 +80,34 @@
       <article id="work" class="entry">
 				<header><h2>Work</h2></header>
 				<section class="content">
-					<p>Here is a simple list of links to sites that I have recently developed</p>
+					<p>Here are some sites that I have recently developed.</p>
 					
-					<ul class="left">
+					<div class="left sitelist">
 					  <h3>Wordpress Sites</h3>
-            <li><a href="http://gurustudev.com/~ben/palmer/" title="Palmer Continuum of Care, Inc.">Palmer Continuum of Care, Inc.</a></li>
-            <li><a href="http://gurustudev.com/~ben/educare/" title="Tulsa Educare">Tulsa Educare</a></li>
-            <li><a href="http://carnivale.mhat.org/" title="Carnivale">Carnivale - Mental Health Association in Tulsa</a></li>
-            <li><a href="http://glowtulsa.com/" title="Glow Tulsa">Glow Tulsa</a></li>
-            <li><a href="http://gurustudev.com/~ben/gurustufoundation/" title="Gurustu Foundation">Gurustu Foundation</a></li>
-            <li><a href="http://gurustudev.com/~ben/owasso/" title="Owasso Community Resources">Owasso Community Resources</a></li>
-            <li><a href="http://emergencyinfantservices.org" title="Emergency Infant Services">Emergency Infant Services</a></li>
-            <li><a href="http://gurustudev.com/~ben/ignite/" title="Ignite Tulsa">Ignite Tulsa</a></li>
-            <li><a href="http://twinfoods.com/" title="Granny's Bacon Drippings">Granny's Bacon Drippings</a></li>
-            <li><a href="http://glistendental.com/" title="Glisten Dental">Glisten Dental</a></li>
-          </ul>
+  					<ul>
+              <li><a href="http://gurustudev.com/~ben/palmer/" title="Palmer Continuum of Care, Inc.">Palmer Continuum of Care, Inc.</a></li>
+              <li><a href="http://gurustudev.com/~ben/educare/" title="Tulsa Educare">Tulsa Educare</a></li>
+              <li><a href="http://carnivale.mhat.org/" title="Carnivale">Carnivale - Mental Health Association in Tulsa</a></li>
+              <li><a href="http://glowtulsa.com/" title="Glow Tulsa">Glow Tulsa</a></li>
+              <li><a href="http://gurustudev.com/~ben/gurustufoundation/" title="Gurustu Foundation">Gurustu Foundation</a></li>
+              <li><a href="http://gurustudev.com/~ben/owasso/" title="Owasso Community Resources">Owasso Community Resources</a></li>
+              <li><a href="http://emergencyinfantservices.org" title="Emergency Infant Services">Emergency Infant Services</a></li>
+              <li><a href="http://gurustudev.com/~ben/ignite/" title="Ignite Tulsa">Ignite Tulsa</a></li>
+              <li><a href="http://twinfoods.com/" title="Granny's Bacon Drippings">Granny's Bacon Drippings</a></li>
+              <li><a href="http://glistendental.com/" title="Glisten Dental">Glisten Dental</a></li>
+            </ul>
+          </div>
           
-          <ul class="right">
+					<div class="right sitelist">
             <h3>Sencha Touch Mobile Applications</h3>
-            <li><a href="http://turntulsapink.com" title="Turn Tulsa Pink">Turn Tulsa Pink</a></li>
-            <li><a href="http://gurustudev.com/~ben/ttpsubwaytiles" title="TTP Subway Tiles">The Turn Tulsa Pink app with a fuller Flickr photo Gallery</a></li>
-            <li><a href="http://mayfestmobile.com" title="Mayfest Mobile Map & Event Guide">Mayfest Mobile Map & Event Guide</a></li>
-          </ul>
+            <ul>
+              <li><a href="http://turntulsapink.com" title="Turn Tulsa Pink">Turn Tulsa Pink</a></li>
+              <li><a href="http://gurustudev.com/~ben/ttpsubwaytiles" title="TTP Subway Tiles">The Turn Tulsa Pink app with a fuller Flickr photo Gallery</a></li>
+              <li><a href="http://mayfestmobile.com" title="Mayfest Mobile Map & Event Guide">Mayfest Mobile Map & Event Guide</a></li>
+            </ul>
+          </div>
           
-          
+          <div class="clearfix"></div>
 				</section>
 			</article>
 
@@ -136,7 +140,7 @@
 
 					<p>Map with past locations and a star on your city</p>
           
-          <ul class="mapList">
+          <div class="mapList">
           <?php
             
             $mapList = array(
@@ -187,7 +191,7 @@
           
           foreach ( $mapList as $place ) {
             
-            echo '<li class="mapItem" ease-data=\''.json_encode($place).'\'>';
+            echo '<div class="mapItem" ease-data=\''.json_encode($place).'\'>';
               
             if ( $place['name'] )
               echo '<h5 class="placeName">'.$place['name'].'</h5>';
@@ -195,7 +199,7 @@
             if ( $place['when'] )
               echo '<span class="placeWhen">'.$place['when'].'</span>';
             
-            echo '</li>';
+            echo '</div>';
           }
           
           //dataCont: '.entry .mapList',
@@ -204,7 +208,7 @@
     			//locationKey: 'ease_address',
     			
     			?>
-    			</ul>
+    			</div>
           
           <div class="clearfix"></div>
 				</section>

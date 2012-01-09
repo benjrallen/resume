@@ -7,7 +7,7 @@
 //number of columns
 $gv-num-columns: 2;
 $gv-base-radius: 3px;
-$gv-thumb-block-spacing: 0.8%;
+$gv-thumb-block-spacing: 1%;
 $gv-box-bg: lighten($base-bg, 5%);
 $gv-border-color: darken( $gv-box-bg, 20% );
 $gv-transition-speed: 0.1s;
@@ -22,11 +22,11 @@ $gv-transition-speed: 0.1s;
 	& #easeLoadingMask{}
 	
 	& .easeCont{
-		
+		text-align: center;
 		
 		& .easeThumbBlock{
 			display: inline-block;
-			width: floor( (100% - $gv-thumb-block-spacing * 2 * $gv-num-columns) / $gv-num-columns);
+			width: floor( (94% - $gv-thumb-block-spacing * 2 * $gv-num-columns) / $gv-num-columns );
 			vertical-align:top;
 			margin-left: $gv-thumb-block-spacing;
 			margin-right: $gv-thumb-block-spacing;

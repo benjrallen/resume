@@ -54,7 +54,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 				navClass: 'easeNav',
 				navPrevText: '<< Prev',
 				navNextText: 'Next >>',
-				localCallUrl: window.location.href + 'js/videos.php'
+				localCallUrl: window.location.protocol + '//' + window.location.host + window.location.pathname + 'js/videos.php'
 			};
 	
 		for (var key in config) {
@@ -83,12 +83,14 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		me.player = null;
 		me.showPlayer = false;
 		me.IS_LTE7 = $('.lte7').length;
+		me.IS_LTE8 = $('.lte8').length;
 		
 		me.API_READY = false;
 		me.PLAYER_READY = false;
 		
 		//me.init();
-		me.init = function(){						
+		me.init = function(){	
+											
 			//load the iFrameAPI
 			me.loadIFrameAPI();
 			
@@ -156,7 +158,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		//TODO:  only use local php shiv if necessary (thinking IE here)
 		me.getUserVideos = function(){
 			var request = {
-				apiUrl: me.API_USER_UPLOADS,
+				//apiUrl: me.API_USER_UPLOADS,
 				alt: me.ALT, //alt is json-c, which somehow magically gets around parsing of json data and cross-domain origin restrictions... but ie can't natively handle it.
 				'max-results': me.maxResults,
 				'start-index': me.START_INDEX,
@@ -164,8 +166,16 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			};
 			//console.log( 'me.getUserVideos', request );
 			
+			var url = me.API_USER_UPLOADS;
+			
+			if( me.IS_LTE8 ){
+				url = me.localCallUrl;
+				request.apiUrl = me.API_USER_UPLOADS;
+			}
+			
 			//get the data... running through our own little url getter script cause IE can't do cross-domain http requests.  PHP can, and it will send us back the data, thus me.localCallUrl.
-		 	return $.getJSON( me.localCallUrl, request, me.printVideoBlocks );
+		 	//return $.getJSON( me.localCallUrl, request, me.printVideoBlocks );
+		 	return $.getJSON( url, request, me.printVideoBlocks );
 		};
 		
 		
@@ -442,6 +452,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 				fallbackLocationKey: 'distributor_mailing_address',
 				zoomControlStyle: 'DEFAULT',
 				streetViewControl: false,
+				scrollwheel: false,
 				mapTypeId: 'ROADMAP',
 				blocksAreClickable: false,
 				directionsLink: false,
@@ -549,6 +560,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 					style: google.maps.ZoomControlStyle[ me.zoomControlStyle ]
 				},
 				streetViewControl: me.streetViewControl,
+				scrollwheel: me.scrollwheel,
 				mapTypeId: google.maps.MapTypeId[ me.mapTypeId ]
 			});
 
@@ -926,7 +938,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 				speed: 15,
 				loadFromBottom: 5000, //px from bottom of container before loading next post
 				navEl: 'nav#jsui',
-				placeholderImage: '/images/transparent.gif'
+				placeholderImage: 'images/transparent.gif'
 			};
 
 		for (var key in config) {
@@ -948,10 +960,11 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		me.placeholder = '';
 		me.page = 1;
 		me.getting = false;
+		me.localUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
 		
 		me.init = function(){
 			
-			me.placeholder = me.url + me.placeholderImage;
+			me.placeholder = me.localUrl + me.placeholderImage;
 			me.nav = $(me.navEl);
 			me.navUl = me.nav.find('#posts');
 			
@@ -1032,7 +1045,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 						width: full.width
 					}).appendTo( cont )
 					.lazyload({
-			    	 	//placeholder : me.placeholder,
+			    	 	placeholder : me.placeholder,
 			    	 	effect      : "fadeIn",
 						container	: me.wrap.parent()
 			    	});
