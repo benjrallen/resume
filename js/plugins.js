@@ -219,8 +219,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		    	width: dim.playerWidth,
 		    	videoId: me.CURRENT_VIDEO.id,
 		    	events: {
-		    		'onReady': me.onPlayerReady,
-					'onYouTubePlayerAPIReady': me.onPlayerReady
+		    		'onReady': me.onPlayerReady
 		    	}
 		    }); 
 		};
@@ -264,7 +263,8 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		};
 
 		me.positionPlayer = function(){			
-			if ( me.player && me.showPlayer && me.PLAYER_READY ) {
+			//if ( me.player && me.showPlayer && me.PLAYER_READY ) {
+			if ( me.player && me.showPlayer ) {
 				var	dimensions = me.makePlayerDimensions(),
 					bW = dimensions.baseWidth,
 					bH = dimensions.baseHeight,
@@ -288,8 +288,8 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		
 		me.loadVideo = function(){
 			console.log( 'me.loadVideo', me.CURRENT_VIDEO, me.player, me.PLAYER_READY);
-			//if (me.player) {
-			if (me.player && me.PLAYER_READY) {
+			if (me.player) {
+			//if (me.player && me.PLAYER_READY) {
 				me.showPlayer = true;
 				me.player.loadVideoById( me.CURRENT_VIDEO.id, 0, 'large');
 				me.positionPlayer();
