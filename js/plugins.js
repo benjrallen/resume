@@ -213,7 +213,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 				return me.loadTimeout = setTimeout( me.loadPlayer, 10 );
 						
 			var dim = me.makePlayerDimensions();
-					    
+			
 		    return me.player = new YT.Player( me.playerContId, {
 		    	height: dim.playerHeight,
 		    	width: dim.playerWidth,
@@ -286,7 +286,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		};
 		
 		me.loadVideo = function(){
-			//console.log( 'me.loadVideo', me.CURRENT_VIDEO);
+			console.log( 'me.loadVideo', me.CURRENT_VIDEO, me.player, me.PLAYER_READY);
 			//if (me.player) {
 			if (me.player && me.PLAYER_READY) {
 				me.showPlayer = true;
