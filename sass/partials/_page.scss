@@ -1,0 +1,254 @@
+@import "compass/css3";
+
+//-----------------------------------------------
+// The following html5-boilerplate styles should
+// probably be customized for each site
+//-----------------------------------------------
+
+body, select, input, textarea {
+  color: $font-color;
+  // Set your base font here, to apply evenly
+  // font-family: Georgia, serif;
+  @include open-sans;
+  
+  background: $base-bg;
+}
+
+//Headers (h1, h2, etc) have no default font-size or margin; define those yourself
+h1, h2, h3, h4, h5, h6 {
+  // Bold might not be the best choice if you are
+  // embedding a @font-face that's already bold
+  font-weight: bold;
+}
+
+a, a:active, a:visited { 
+  color: $link-color; 
+  @include single-transition('all', $base-speed);
+}
+a:hover { 
+  color: $link-hover-color;
+}
+
+strong, th {
+  font-weight: bold;
+}
+
+small {
+  // Use font-size mixin to convert to percentage for YUI
+  // http://developer.yahoo.com/yui/3/cssfonts/#fontsize
+  @include font-size(11px);  // approx 85% when base-font-size eq 13px
+}
+
+// Add the 'required' attribute on your
+// inputs if you want to use these
+input:valid, textarea:valid {}
+input:invalid, textarea:invalid {
+  @include border-radius(1px);
+  @include single-box-shadow(red, 0, 0, 5px, 0);
+}
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+//-----------------------------------
+// Add your own custom styles below
+//-----------------------------------
+
+body {
+  //color: $base-color;
+}
+
+h1, h2, h3, h4, h5, h6{
+  @include belgrano;
+  
+  @include single-text-shadow( darken($base-bg, 30%), -1px, 1px, 0px );
+}
+
+a{
+  text-decoration: none;
+  //color: lighten( $font-color, 10% );
+  
+  &:hover{
+    text-decoration: underline;
+    @include single-transition('all', 0.2s);
+  }
+}
+
+.wrap{
+  display: block;
+  width: $base-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  
+  //background: rgba( 255,255,255, 0.1 );
+}
+
+#container {
+}
+
+#header {
+  @include padding-leader;
+  @include padding-trailer;
+
+  & h1{
+    //@include float-left;
+  }
+
+  & #logo{
+    @include adjust-font-size-to( 28px );
+  }
+}
+
+nav#access{
+  @include margin-leader;
+  @include margin-trailer(3);
+
+  //border-bottom: 1px solid darken( $base-bg, 15% );
+  //@include box-shadow( rgba(255, 255, 255, 0.0664062) 0px -1px 0px 0px inset );
+  
+  //background: rgba( 100, 255, 255, 0.1 );
+
+  & .menu{
+    //background: rgba( 255, 255, 255, 0.1 );
+    @include inline-block-list;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    //@include float-right;
+    
+    & li{
+      
+      & a{
+        display: block;
+        @include padding-leader(0.5);
+        @include padding-trailer(0.5);
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        
+        &:hover{
+          text-decoration: none;
+          background: rgba(255,255,255, 0.2);
+          
+        }
+      }
+    }
+  }
+}
+
+#main {
+  & article{
+    //@include padding-leader;
+    @include padding-trailer( 2.5 );
+    @include padding-leader( 1.5 );
+    
+    & header{
+      border-top: 1px solid darken( $base-bg, 15% );
+      @include box-shadow( rgba(255, 255, 255, 0.0664062) 0px 1px 0px 0px inset );
+      text-align: center;
+      
+      & h2{
+        @include adjust-font-size-to( 40px );
+        position: relative;
+        top: -0.75em;
+        background: $base-bg;
+        display: inline;
+        width: auto;
+        padding-left: 1em;
+        padding-right: 1em;
+        
+      }
+    }
+    
+    & .content{
+      @include adjust-font-size-to( 16px );
+      @include padding-leader();
+      @include padding-trailer();
+      padding-left: 1em;
+      padding-right: 1em;
+      
+      & #videoBlocks{
+        width: 40%;
+        @include float-right;
+      }
+    }
+
+	&#map{
+		& #gmapCont{
+			//@include float-left;
+			//width: 90%;
+			height: 400px;
+		}
+	}
+    
+    &#who{
+      text-align: center;
+      
+      & p{
+        display: block;
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        &.top{
+          @include adjust-font-size-to( 28px );
+        }
+      }
+      
+      & #resumeLink{
+        display: block;
+        width: 40%;
+        @include margin-leader( 2 );
+        margin-left: auto;
+        margin-right: auto;
+        @include margin-trailer( 2 );
+
+        &:hover{
+          text-decoration: none;
+          & span{
+          
+            &.line2{
+              color: darken( $link-hover-color, 25% );
+              top: 0.5em;
+            }
+          }
+        }
+                
+        & span{
+          display: inline-block;
+          cursor:pointer;
+          cursor:hand;
+          font-weight: 800;
+          text-transform: uppercase;
+
+          &.line1{
+            @include adjust-font-size-to(44px);
+            letter-spacing: 3px;
+          }
+          &.line2{
+            background: url('../images/arrow.png') no-repeat;
+            background-size: 100%;
+            @include adjust-font-size-to( 22px );
+            //font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            top: 0.25em;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            @include padding-trailer(4);
+            @include margin-leader(0.5);
+            color: $base-bg;
+            @include single-transition( 'all', 0.1s, 'ease-in-out' );
+          }
+        }
+      }
+    }
+  }
+
+}
+
+#footer {}

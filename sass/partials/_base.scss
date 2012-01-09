@@ -1,0 +1,66 @@
+// This file must be imported before loading html5-boilerplate
+
+$base-font-family: unquote('sans-serif');  // default font-family
+
+$base-font-size: 13px;  // default font-size for YUI fonts
+
+$base-line-height: 16px;  // default line-height for YUI fonts
+
+$font-color: #ddd;
+
+
+$selected-font-color: #fff;  // color for selected text
+
+$selected-background-color: #bada55;  // bg-color for selected text
+
+$list-left-margin: 2em;  // left margin for ul an ol
+
+$base-speed: 0.2s;
+
+$base-bg: #2c2c2c;
+
+$base-width: 960px;
+
+$base-color: #bada55;
+$color-1: #53A4DA; //blueish
+$color-2: #EE2840; //reddish
+
+
+$link-color: lighten( $font-color, 10% );
+
+$link-hover-color: $color-1;
+
+$link-active-color: $link-color;
+
+$link-visited-color: $link-color;
+
+
+@import 'compass/css3';
+@import 'compass/css3/pie';
+@import 'compass/typography';
+
+$pie-behavior: url("/PIE.htc");
+$pie-base-class: pie;
+.pie{
+	@include pie-element(relative);
+}
+
+@include establish-baseline;
+
+
+@mixin basic-bttn( $fColor: #fefefe, $color: #bad, $contrast: #bada55, $bColor: #ff4, $br: 3px, $bw: 1px){
+	@include background( linear-gradient( top, $color 0%, $contrast 4%, $color 100% ) );
+	border: $bw solid $bColor;
+	color: $fColor;
+	@include border-radius( $br );
+	
+	&:hover{
+		background: $color;
+		color: $fColor;
+		text-decoration: none;
+	}
+	&:active{
+		@include background( linear-gradient( bottom, $color 0%, $contrast 4%, $color 100% ) );
+	}
+	@include single-transition(none);
+}

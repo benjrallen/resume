@@ -1,0 +1,852 @@
+/* line 44, ../sass/partials/_base.scss */
+.pie {
+  behavior: url("/PIE.htc");
+  position: relative;
+}
+
+/* line 51, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+body {
+  font-size: 81.25%;
+  line-height: 1.231em;
+}
+
+/* line 55, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html > body {
+  font-size: 13px;
+}
+
+/* line 14, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 23, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 27, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 30, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 34, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 36, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* line 38, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* line 40, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 42, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_reset.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 11, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_fonts.scss */
+body {
+  font-size: 13px;
+  font-family: sans-serif;
+  line-height: 16px;
+  *font-size: small;
+}
+
+/* line 20, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_fonts.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* line 15, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 17, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+ul, ol {
+  margin-left: 2em;
+}
+
+/* line 18, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+ol {
+  list-style-type: decimal;
+}
+
+/* line 20, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+td {
+  vertical-align: top;
+}
+
+/* line 22, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  bottom: -0.25em;
+}
+
+/* line 24, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  top: -0.5em;
+}
+
+/* line 53, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+a:hover, a:active {
+  outline: none;
+}
+
+/* line 58, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+
+/* line 71, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+label, input[type="button"], input[type="submit"], input[type="image"], button {
+  cursor: pointer;
+}
+
+/* line 80, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+button, input, select, textarea {
+  width: auto;
+  overflow: visible;
+  margin: 0;
+  font-size: 100%;
+  font-family: sans-serif;
+  vertical-align: baseline;
+}
+
+/* line 84, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+textarea {
+  overflow: auto;
+  vertical-align: text-top;
+}
+
+/* line 88, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 99, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+::-moz-selection {
+  background: #bada55;
+  color: white;
+  text-shadow: none;
+}
+
+/* line 100, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+::selection {
+  background: #bada55;
+  color: white;
+  text-shadow: none;
+}
+
+/* line 105, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+a:link {
+  -webkit-tap-highlight-color: #bada55;
+}
+
+/* line 118, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 120, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+.ie6 legend, .ie7 legend {
+  margin-left: -7px;
+}
+
+/* line 125, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_styles.scss */
+nav ul, nav li {
+  margin: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 10, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.ir {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  direction: ltr;
+  background-repeat: no-repeat;
+}
+
+/* line 12, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 14, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* line 50, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* line 16, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 61, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+/* line 62, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_helpers.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 8, ../sass/partials/_page.scss */
+body, select, input, textarea {
+  color: #dddddd;
+  font-family: 'Open Sans', sans-serif;
+  background: #2c2c2c;
+}
+
+/* line 18, ../sass/partials/_page.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* line 24, ../sass/partials/_page.scss */
+a, a:active, a:visited {
+  color: #f7f7f7;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+/* line 28, ../sass/partials/_page.scss */
+a:hover {
+  color: #53a4da;
+}
+
+/* line 32, ../sass/partials/_page.scss */
+strong, th {
+  font-weight: bold;
+}
+
+/* line 36, ../sass/partials/_page.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 45, ../sass/partials/_page.scss */
+input:invalid, textarea:invalid {
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -o-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -khtml-border-radius: 1px;
+  border-radius: 1px;
+  -moz-box-shadow: 0 0 5px 0 red;
+  -webkit-box-shadow: 0 0 5px 0 red;
+  -o-box-shadow: 0 0 5px 0 red;
+  box-shadow: 0 0 5px 0 red;
+}
+
+/* line 50, ../sass/partials/_page.scss */
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid {
+  background-color: #f0dddd;
+}
+
+/* line 61, ../sass/partials/_page.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Belgrano', Baskerville, Georgia, serif;
+  text-shadow: black -1px 1px 0px;
+}
+
+/* line 67, ../sass/partials/_page.scss */
+a {
+  text-decoration: none;
+}
+/* line 71, ../sass/partials/_page.scss */
+a:hover {
+  text-decoration: underline;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+/* line 77, ../sass/partials/_page.scss */
+.wrap {
+  display: block;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* line 91, ../sass/partials/_page.scss */
+#header {
+  padding-top: 1.231em;
+  padding-bottom: 1.231em;
+}
+/* line 99, ../sass/partials/_page.scss */
+#header #logo {
+  font-size: 2.154em;
+  line-height: 1.143em;
+}
+
+/* line 104, ../sass/partials/_page.scss */
+nav#access {
+  margin-top: 1.231em;
+  margin-bottom: 3.692em;
+}
+/* line 113, ../sass/partials/_page.scss */
+nav#access .menu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 46, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_inline-block-list.scss */
+nav#access .menu li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  white-space: nowrap;
+}
+/* line 7, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+nav#access .menu li {
+  *display: inline;
+}
+/* line 125, ../sass/partials/_page.scss */
+nav#access .menu li a {
+  display: block;
+  padding-top: 0.615em;
+  padding-bottom: 0.615em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+/* line 132, ../sass/partials/_page.scss */
+nav#access .menu li a:hover {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 143, ../sass/partials/_page.scss */
+#main article {
+  padding-bottom: 3.077em;
+  padding-top: 1.846em;
+}
+/* line 148, ../sass/partials/_page.scss */
+#main article header {
+  border-top: 1px solid #060606;
+  -moz-box-shadow: rgba(255, 255, 255, 0.066) 0px 1px 0px 0px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.066) 0px 1px 0px 0px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.066) 0px 1px 0px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0.066) 0px 1px 0px 0px inset;
+  text-align: center;
+}
+/* line 153, ../sass/partials/_page.scss */
+#main article header h2 {
+  font-size: 3.077em;
+  line-height: 1.2em;
+  position: relative;
+  top: -0.75em;
+  background: #2c2c2c;
+  display: inline;
+  width: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 166, ../sass/partials/_page.scss */
+#main article .content {
+  font-size: 1.231em;
+  line-height: 2em;
+  padding-top: 1.231em;
+  padding-bottom: 1.231em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 173, ../sass/partials/_page.scss */
+#main article .content #videoBlocks {
+  width: 40%;
+  display: inline;
+  float: right;
+}
+/* line 180, ../sass/partials/_page.scss */
+#main article#map #gmapCont {
+  height: 400px;
+}
+/* line 187, ../sass/partials/_page.scss */
+#main article#who {
+  text-align: center;
+}
+/* line 190, ../sass/partials/_page.scss */
+#main article#who p {
+  display: block;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 196, ../sass/partials/_page.scss */
+#main article#who p.top {
+  font-size: 2.154em;
+  line-height: 1.143em;
+}
+/* line 201, ../sass/partials/_page.scss */
+#main article#who #resumeLink {
+  display: block;
+  width: 40%;
+  margin-top: 2.462em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.462em;
+}
+/* line 209, ../sass/partials/_page.scss */
+#main article#who #resumeLink:hover {
+  text-decoration: none;
+}
+/* line 213, ../sass/partials/_page.scss */
+#main article#who #resumeLink:hover span.line2 {
+  color: #1f628f;
+  top: 0.5em;
+}
+/* line 220, ../sass/partials/_page.scss */
+#main article#who #resumeLink span {
+  display: inline-block;
+  cursor: pointer;
+  cursor: hand;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+/* line 227, ../sass/partials/_page.scss */
+#main article#who #resumeLink span.line1 {
+  font-size: 3.385em;
+  line-height: 1.091em;
+  letter-spacing: 3px;
+}
+/* line 231, ../sass/partials/_page.scss */
+#main article#who #resumeLink span.line2 {
+  background: url("../images/arrow.png") no-repeat;
+  background-size: 100%;
+  font-size: 1.692em;
+  line-height: 1.455em;
+  letter-spacing: 1px;
+  position: relative;
+  top: 0.25em;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 4.923em;
+  margin-top: 0.615em;
+  color: #2c2c2c;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+/* line 15, ../sass/_easeYouTubeVideos.scss */
+.easeVideos {
+  position: relative;
+  min-height: 368px;
+  display: block;
+}
+/* line 27, ../sass/_easeYouTubeVideos.scss */
+.easeVideos .easeCont .easeThumbBlock {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  margin-left: 0.8%;
+  margin-right: 0.8%;
+  margin-bottom: 1.231em;
+  padding-top: 1.231em;
+  padding-bottom: 1.231em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  background: #393939;
+  border: 1px solid #060606;
+  -moz-transition-property: background;
+  -webkit-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  cursor: pointer;
+  cursor: hand;
+}
+/* line 47, ../sass/_easeYouTubeVideos.scss */
+.easeVideos .easeCont .easeThumbBlock:hover {
+  background: #1f1f1f;
+}
+/* line 51, ../sass/_easeYouTubeVideos.scss */
+.easeVideos .easeCont .easeThumbBlock .easeImgLink {
+  display: block;
+}
+/* line 54, ../sass/_easeYouTubeVideos.scss */
+.easeVideos .easeCont .easeThumbBlock .easeVideoThumb {
+  margin: 0 auto;
+  display: block;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 60, ../sass/_easeYouTubeVideos.scss */
+.easeVideos .easeCont .easeThumbBlock .easeThumbTitle {
+  text-align: center;
+  font-size: 0.846em;
+  line-height: 1.455em;
+  margin-top: 1.231em;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  cursor: hand;
+  font-family: courier, monospace, sans-serif;
+}
+/* line 71, ../sass/_easeYouTubeVideos.scss */
+.easeVideos .easeCont .easeThumbBlock .easeDesc {
+  display: none;
+}
+
+/* line 82, ../sass/_easeYouTubeVideos.scss */
+#easeLoadingMask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  background-image: url("../images/loading.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.5);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF,endColorstr=#7FFFFFFF)";
+  /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF,endColorstr=#7FFFFFFF);
+  /* IE6 & 7 */
+  zoom: 1;
+}
+
+/* line 105, ../sass/_easeYouTubeVideos.scss */
+.easeDesc {
+  margin-top: 1.231em;
+  margin-bottom: 1.231em;
+  font-size: 0.923em;
+  line-height: 1.333em;
+}
+
+/* line 113, ../sass/_easeYouTubeVideos.scss */
+#easePagin {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.923em;
+  line-height: 1.333em;
+  padding-top: 1.231em;
+  padding-bottom: 1.231em;
+  min-height: 50px;
+}
+
+/* line 126, ../sass/_easeYouTubeVideos.scss */
+#easePagin .next, #easePagin .prev {
+  display: inline-block;
+  vertical-align: text-top;
+  cursor: pointer;
+  cursor: hand;
+  padding-top: 0.308em;
+  padding-bottom: 0.308em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #393939), color-stop(4%, #525252), color-stop(100%, #393939));
+  background: -webkit-linear-gradient(top, #393939 0%, #525252 4%, #393939 100%);
+  background: -moz-linear-gradient(top, #393939 0%, #525252 4%, #393939 100%);
+  background: -o-linear-gradient(top, #393939 0%, #525252 4%, #393939 100%);
+  background: -ms-linear-gradient(top, #393939 0%, #525252 4%, #393939 100%);
+  -pie-background: linear-gradient(top, #393939 0%, #525252 4%, #393939 100%);
+  background: linear-gradient(top, #393939 0%, #525252 4%, #393939 100%);
+  border: 1px solid #121212;
+  color: #eeeeee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-transition-property: none;
+  -webkit-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+/* line 57, ../sass/partials/_base.scss */
+#easePagin .next:hover, #easePagin .prev:hover {
+  background: #393939;
+  color: #eeeeee;
+  text-decoration: none;
+}
+/* line 62, ../sass/partials/_base.scss */
+#easePagin .next:active, #easePagin .prev:active {
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #393939), color-stop(4%, #525252), color-stop(100%, #393939));
+  background: -webkit-linear-gradient(bottom, #393939 0%, #525252 4%, #393939 100%);
+  background: -moz-linear-gradient(bottom, #393939 0%, #525252 4%, #393939 100%);
+  background: -o-linear-gradient(bottom, #393939 0%, #525252 4%, #393939 100%);
+  background: -ms-linear-gradient(bottom, #393939 0%, #525252 4%, #393939 100%);
+  -pie-background: linear-gradient(bottom, #393939 0%, #525252 4%, #393939 100%);
+  background: linear-gradient(bottom, #393939 0%, #525252 4%, #393939 100%);
+}
+
+/* line 145, ../sass/_easeYouTubeVideos.scss */
+#easePagin .next {
+  display: inline;
+  float: right;
+}
+
+/* line 148, ../sass/_easeYouTubeVideos.scss */
+#easePagin .prev {
+  display: inline;
+  float: left;
+}
+
+/* line 151, ../sass/_easeYouTubeVideos.scss */
+#easePagin span {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+/* line 157, ../sass/_easeYouTubeVideos.scss */
+#easeVideoPlayer, #easeClose {
+  position: absolute !important;
+  left: -10000px;
+}
+
+/* line 162, ../sass/_easeYouTubeVideos.scss */
+#easeVideoPlayer {
+  z-index: 1000;
+}
+
+/* line 165, ../sass/_easeYouTubeVideos.scss */
+#easeClose {
+  z-index: 1001;
+  cursor: pointer;
+  color: #fefefe;
+  font-size: 1.5em;
+  line-height: 1.8em;
+  padding: 0.4em 1em;
+  background: rgba(0, 0, 0, 0.5);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)";
+  /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+  /* IE6 & 7 */
+  zoom: 1;
+}
+/* line 178, ../sass/_easeYouTubeVideos.scss */
+#easeClose:hover {
+  text-decoration: underline;
+  background: rgba(0, 0, 0, 0.7);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000)";
+  /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
+  /* IE6 & 7 */
+}
+/* line 184, ../sass/_easeYouTubeVideos.scss */
+#easeClose:active {
+  background: rgba(0, 0, 0, 0.6);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
+  /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+  /* IE6 & 7 */
+}
+
+/* line 191, ../sass/_easeYouTubeVideos.scss */
+.easePlay {
+  display: none;
+}
+
+/*/mediaquery*/
+/*/mediaquery*/
+@media print {
+  /* line 10, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* line 12, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+
+  /* line 13, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 14, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 15, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 16, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 17, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 18, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  /* line 19, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 21, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 22, ../../../../../Users/benjamin/.rvm/gems/ruby-1.9.2-p290/gems/html5-boilerplate-1.0.0/stylesheets/html5-boilerplate/_media.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
