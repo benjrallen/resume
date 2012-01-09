@@ -136,9 +136,10 @@
       <article id="map" class="entry">
 				<header><h2>Where I've been. Where I'll be</h2></header>
 				<section class="content">
-          <div id="gmapCont"></div>
 
 					<p>Map with past locations and a star on your city</p>
+
+          <div id="gmapCont"></div>
           
           <div class="mapList">
           <?php
@@ -191,8 +192,9 @@
           
           foreach ( $mapList as $place ) {
             
-            echo '<div class="mapItem" ease-data=\''.json_encode($place).'\'>';
-              
+            echo '<div class="mapItem">';
+              echo '<div class="ease-data">'.json_encode($place).'</div>';
+            
             if ( $place['name'] )
               echo '<h5 class="placeName">'.$place['name'].'</h5>';
             

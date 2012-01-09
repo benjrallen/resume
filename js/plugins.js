@@ -443,6 +443,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 				centerLat: 38.7902935,
 				centerLng: -97.64023729999997,
 				mapHeight: 500,
+				minZoom: 3, //used to set the zoom level on marker click
 				fitMarkers: false, //fit all the markers on the map?  overrides centerLatLng and zoom
 				contId: 'gmapCont',
 				dataCont: '.distributor-wrap',
@@ -651,10 +652,10 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		};
 		
 		me.handleMarkerClick = function(coords){
+
 			//console.log('me.handleMarkerClick', coords, this);
 
-			var content = '<div class="mapInfoDom">'+$(this.item.DOM).html();
-			
+			var content = '<div class="mapInfoDom">'+$(this.item.DOM).html();			
 			
 			//here is where we print out a directions link
 			if (me.directionsLink) {
@@ -673,6 +674,10 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			
 			me.infowindow.setContent( content );				
 									
+			//at least put the map a little bit lower
+			if( me.map.getZoom() < me.minZoom )
+				me.map.setZoom( me.minZoom );
+
 			me.infowindow.open(me.map, this);
 			
 		};
@@ -682,7 +687,8 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			//dataBlock supplied in config
 			return $(me.dataCont).find(me.dataBlock).each(function(){
 				//console.log( $(this).attr( me.dataAttr ) );
-				var item = JSON.parse( $(this).attr( me.dataAttr ) );
+				//var item = JSON.parse( $(this).attr( me.dataAttr ) );
+				var item = JSON.parse( $(this).find( '.'+me.dataAttr ).text() );
 				item.DOM = this;
 				me.data.push( item );
 			});			

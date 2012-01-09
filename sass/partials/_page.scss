@@ -193,10 +193,17 @@ nav#access{
 	}
 
 	&#map{
+		& #gmapCont, & .mapList{
+			display: inline-block;
+			vertical-align: top;
+		}
 		& #gmapCont{
 			//@include float-left;
-			//width: 90%;
+			width: 60%;
 			height: 400px;
+		}
+		& .mapList{
+			//width: 20%;
 		}
 	}
     
@@ -460,3 +467,7 @@ nav#access{
 #loadSubwayTiles{}
 
 #footer {}
+
+.ease-data{
+	display: none;
+}
