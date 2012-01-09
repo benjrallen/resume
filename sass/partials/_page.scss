@@ -245,7 +245,58 @@ nav#access{
             @include margin-leader(0.5);
             color: $base-bg;
             @include single-transition( 'all', 0.1s, 'ease-in-out' );
+          }
+        }
+      }
+    }
+  }
 
+}
+
+.lte8 #main {
+  & article{
+    
+    & header{
+      
+      & h2{
+      }
+    }
+    
+    & .content{
+      
+      & #videoBlocks{
+      }
+    }
+
+	&#map{
+		& #gmapCont{
+		}
+	}
+    
+    &#who{
+      
+      & p{
+        
+        &.top{
+        }
+      }
+      
+      & #resumeLink{
+
+        &:hover{
+          & span{
+          
+            &.line2{
+            }
+          }
+        }
+                
+        & span{
+
+          &.line1{
+          }
+          &.line2{
+			background: none;
 			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
 			src='../images/arrow.png',
 			sizingMethod='scale');
