@@ -25,8 +25,11 @@
 			blocksAreClickable: true
 		});
 
+		var request = '?json=get_recent_posts';
 
-		
+		$.getJSON( 'http://subwaytiles.bennya.com' + request, function(json){
+			console.log('request worked', json);
+		});
 	});
 	
 })(jQuery);

@@ -151,6 +151,8 @@ img.easeVideoThumb {
 #easePagin span{
 	display:inline-block;
 	vertical-align: text-top;
+	//@include margin-leader(0.25);
+	@include adjust-font-size-to(12px, 1.75);
 }
 
 

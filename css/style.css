@@ -730,20 +730,22 @@ nav#access .menu li a:hover {
 #easePagin span {
   display: inline-block;
   vertical-align: text-top;
+  font-size: 0.923em;
+  line-height: 2.333em;
 }
 
-/* line 157, ../sass/_easeYouTubeVideos.scss */
+/* line 159, ../sass/_easeYouTubeVideos.scss */
 #easeVideoPlayer, #easeClose {
   position: absolute !important;
   left: -10000px;
 }
 
-/* line 162, ../sass/_easeYouTubeVideos.scss */
+/* line 164, ../sass/_easeYouTubeVideos.scss */
 #easeVideoPlayer {
   z-index: 1000;
 }
 
-/* line 165, ../sass/_easeYouTubeVideos.scss */
+/* line 167, ../sass/_easeYouTubeVideos.scss */
 #easeClose {
   z-index: 1001;
   cursor: pointer;
@@ -758,7 +760,7 @@ nav#access .menu li a:hover {
   /* IE6 & 7 */
   zoom: 1;
 }
-/* line 178, ../sass/_easeYouTubeVideos.scss */
+/* line 180, ../sass/_easeYouTubeVideos.scss */
 #easeClose:hover {
   text-decoration: underline;
   background: rgba(0, 0, 0, 0.7);
@@ -767,7 +769,7 @@ nav#access .menu li a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);
   /* IE6 & 7 */
 }
-/* line 184, ../sass/_easeYouTubeVideos.scss */
+/* line 186, ../sass/_easeYouTubeVideos.scss */
 #easeClose:active {
   background: rgba(0, 0, 0, 0.6);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)";
@@ -776,7 +778,7 @@ nav#access .menu li a:hover {
   /* IE6 & 7 */
 }
 
-/* line 191, ../sass/_easeYouTubeVideos.scss */
+/* line 193, ../sass/_easeYouTubeVideos.scss */
 .easePlay {
   display: none;
 }
