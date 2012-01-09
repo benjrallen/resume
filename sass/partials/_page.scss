@@ -245,6 +245,14 @@ nav#access{
             @include margin-leader(0.5);
             color: $base-bg;
             @include single-transition( 'all', 0.1s, 'ease-in-out' );
+
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+			src='../images/arrow.png',
+			sizingMethod='scale');
+
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
+			src='../images/arrow.png',
+			sizingMethod='scale')";
           }
         }
       }
