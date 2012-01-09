@@ -363,23 +363,29 @@ a:hover {
   padding-right: 1em;
 }
 
-/* line 91, ../sass/partials/_page.scss */
+/* line 88, ../sass/partials/_page.scss */
+#container {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 93, ../sass/partials/_page.scss */
 #header {
   padding-top: 1.231em;
   padding-bottom: 1.231em;
 }
-/* line 99, ../sass/partials/_page.scss */
+/* line 101, ../sass/partials/_page.scss */
 #header #logo {
   font-size: 2.154em;
   line-height: 1.143em;
 }
 
-/* line 104, ../sass/partials/_page.scss */
+/* line 106, ../sass/partials/_page.scss */
 nav#access {
   margin-top: 1.231em;
   margin-bottom: 3.692em;
 }
-/* line 113, ../sass/partials/_page.scss */
+/* line 115, ../sass/partials/_page.scss */
 nav#access .menu {
   margin: 0;
   padding: 0;
@@ -407,7 +413,7 @@ nav#access .menu li {
 nav#access .menu li {
   *display: inline;
 }
-/* line 125, ../sass/partials/_page.scss */
+/* line 127, ../sass/partials/_page.scss */
 nav#access .menu li a {
   display: block;
   padding-top: 0.615em;
@@ -415,18 +421,18 @@ nav#access .menu li a {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-/* line 132, ../sass/partials/_page.scss */
+/* line 134, ../sass/partials/_page.scss */
 nav#access .menu li a:hover {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 143, ../sass/partials/_page.scss */
+/* line 145, ../sass/partials/_page.scss */
 #main article {
   padding-bottom: 3.077em;
   padding-top: 1.846em;
 }
-/* line 148, ../sass/partials/_page.scss */
+/* line 150, ../sass/partials/_page.scss */
 #main article header {
   border-top: 1px solid #060606;
   -moz-box-shadow: rgba(255, 255, 255, 0.066) 0px 1px 0px 0px inset;
@@ -435,7 +441,7 @@ nav#access .menu li a:hover {
   box-shadow: rgba(255, 255, 255, 0.066) 0px 1px 0px 0px inset;
   text-align: center;
 }
-/* line 153, ../sass/partials/_page.scss */
+/* line 155, ../sass/partials/_page.scss */
 #main article header h2 {
   font-size: 3.077em;
   line-height: 1.2em;
@@ -447,7 +453,7 @@ nav#access .menu li a:hover {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 166, ../sass/partials/_page.scss */
+/* line 168, ../sass/partials/_page.scss */
 #main article .content {
   font-size: 1.231em;
   line-height: 2em;
@@ -456,33 +462,33 @@ nav#access .menu li a:hover {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 173, ../sass/partials/_page.scss */
+/* line 175, ../sass/partials/_page.scss */
 #main article .content #videoBlocks {
   width: 40%;
   display: inline;
   float: right;
 }
-/* line 180, ../sass/partials/_page.scss */
+/* line 182, ../sass/partials/_page.scss */
 #main article#map #gmapCont {
   height: 400px;
 }
-/* line 187, ../sass/partials/_page.scss */
+/* line 189, ../sass/partials/_page.scss */
 #main article#who {
   text-align: center;
 }
-/* line 190, ../sass/partials/_page.scss */
+/* line 192, ../sass/partials/_page.scss */
 #main article#who p {
   display: block;
   width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 196, ../sass/partials/_page.scss */
+/* line 198, ../sass/partials/_page.scss */
 #main article#who p.top {
   font-size: 2.154em;
   line-height: 1.143em;
 }
-/* line 201, ../sass/partials/_page.scss */
+/* line 203, ../sass/partials/_page.scss */
 #main article#who #resumeLink {
   display: block;
   width: 40%;
@@ -491,16 +497,16 @@ nav#access .menu li a:hover {
   margin-right: auto;
   margin-bottom: 2.462em;
 }
-/* line 209, ../sass/partials/_page.scss */
+/* line 211, ../sass/partials/_page.scss */
 #main article#who #resumeLink:hover {
   text-decoration: none;
 }
-/* line 213, ../sass/partials/_page.scss */
+/* line 215, ../sass/partials/_page.scss */
 #main article#who #resumeLink:hover span.line2 {
   color: #1f628f;
   top: 0.5em;
 }
-/* line 220, ../sass/partials/_page.scss */
+/* line 222, ../sass/partials/_page.scss */
 #main article#who #resumeLink span {
   display: inline-block;
   cursor: pointer;
@@ -508,13 +514,13 @@ nav#access .menu li a:hover {
   font-weight: 800;
   text-transform: uppercase;
 }
-/* line 227, ../sass/partials/_page.scss */
+/* line 229, ../sass/partials/_page.scss */
 #main article#who #resumeLink span.line1 {
   font-size: 3.385em;
   line-height: 1.091em;
   letter-spacing: 3px;
 }
-/* line 231, ../sass/partials/_page.scss */
+/* line 233, ../sass/partials/_page.scss */
 #main article#who #resumeLink span.line2 {
   background: url("../images/arrow.png") no-repeat;
   background-size: 100%;
@@ -541,6 +547,144 @@ nav#access .menu li a:hover {
   -webkit-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+}
+
+/* line 256, ../sass/partials/_page.scss */
+#subwayTilesWrap {
+  position: fixed;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 2;
+  overflow-y: scroll;
+  display: none;
+}
+/* line 266, ../sass/partials/_page.scss */
+#subwayTilesWrap #closeSubwayTiles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding-top: 0.308em;
+  padding-bottom: 0.308em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #font-color;
+  background: #2c2c2c;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  font-size: 1.077em;
+  line-height: 2.286em;
+  cursor: pointer;
+  cursor: hand;
+}
+/* line 284, ../sass/partials/_page.scss */
+#subwayTilesWrap #closeSubwayTiles:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 287, ../sass/partials/_page.scss */
+#subwayTilesWrap #closeSubwayTiles:hover small {
+  display: inline;
+}
+/* line 292, ../sass/partials/_page.scss */
+#subwayTilesWrap #closeSubwayTiles small {
+  display: none;
+  margin-left: 1em;
+}
+/* line 304, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui {
+  margin: 0;
+  display: block;
+  width: 16em;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #dddddd;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 11;
+}
+/* line 315, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui header {
+  display: block;
+}
+/* line 318, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui header h4 {
+  font-size: 1.846em;
+  line-height: 1.333em;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-shadow: none;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.615em;
+  margin-bottom: 0.308em;
+  color: #eaeaea;
+  border-bottom: 3px solid;
+  font-family: futura, helvetica, arial, sans-serif;
+  cursor: pointer;
+  cursor: hand;
+  text-align: center;
+}
+/* line 334, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui header h4:hover {
+  color: #d0d0d0;
+}
+/* line 337, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui header h4:active {
+  color: #c4c4c4;
+}
+/* line 343, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui ul#posts {
+  margin-top: 0.154em;
+  margin-bottom: 0.308em;
+  display: block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+/* line 350, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui ul#posts li {
+  margin-top: 0.615em;
+  margin-left: 1em;
+}
+/* line 354, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui ul#posts li a {
+  text-decoration: none;
+}
+/* line 360, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui #menuToggle {
+  display: block;
+  margin-top: 1.231em;
+  margin-bottom: 0.615em;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 0.769em;
+  line-height: 1.6em;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  cursor: default;
+}
+/* line 372, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui #menuToggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* line 375, ../sass/partials/_page.scss */
+#subwayTilesWrap #jsui #menuToggle:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* line 382, ../sass/partials/_page.scss */
+#subwayTilesWrap #subwayTiles {
+  position: relative;
+  z-index: 1;
 }
 
 /* line 15, ../sass/_easeYouTubeVideos.scss */

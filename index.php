@@ -30,6 +30,25 @@
 	</script>
   </head>
   <body>
+		<div id="subwayTilesWrap">
+		  <span id="closeSubwayTiles">x<small>(close Subway Tiles)</small></span>
+		  <nav id="jsui">
+      	<header>
+      		<h4>Subway Tiles</h4>
+      	</header>
+
+      	<ul id="posts">
+      		<li><a href="#tilesEnd">#end</a></li>
+      	</ul>
+
+      	<div id="menuToggle">toggle</div>
+
+      </nav>
+		  <div id="subwayTiles"></div>
+		  
+		  <div id="tilesEnd"></div>
+    </div>
+    
     <div id='container'>
       
 		<header class="wrap" id="header">
@@ -93,6 +112,7 @@
 				<header><h2>Photos</h2></header>
 				<section class="content">
 					<p>This is an area that if scrolled to takes over the screen with (I'm thinking) a fixed position element with overflow: scroll.  An X shows up in the corner to disable the interface.  it consumes an rss feed of a photo blog in the subway tiles interface-type-thing.</p>
+					<a id="loadSubwayTiles">Load Subway Tiles</a>
 				</section>
 			</article>
 

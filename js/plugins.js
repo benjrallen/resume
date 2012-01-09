@@ -676,7 +676,7 @@ window.log = function(){
 		};
 		
 		
-		
+		//following block not in use for my resume site
 		/*
 		me.getRoute = function(){
 			//console.log( 'me.getRoute', me.startAddy, me.endAddy, me.waypoints );
@@ -736,5 +736,447 @@ window.log = function(){
 	}
 	
 	window['EaseMap'] = EaseMap;
+	
+})(jQuery);
+
+/*
+ * Lazy Load - jQuery plugin for lazy loading images
+ *
+ * Copyright (c) 2007-2009 Mika Tuupola
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *   http://www.appelsiini.net/projects/lazyload
+ *
+ * Version:  1.5.0
+ *
+ */
+(function($) {
+
+    $.fn.lazyload = function(options) {
+        var settings = {
+            threshold    : 0,
+            failurelimit : 0,
+            event        : "scroll",
+            effect       : "show",
+            container    : window
+        };
+                
+        if(options) {
+            $.extend(settings, options);
+        }
+
+        /* Fire one scroll event per scroll. Not one scroll event per image. */
+        var elements = this;
+        if ("scroll" == settings.event) {
+            $(settings.container).bind("scroll", function(event) {
+                
+                var counter = 0;
+                elements.each(function() {
+                    if ($.abovethetop(this, settings) ||
+                        $.leftofbegin(this, settings)) {
+                            /* Nothing. */
+                    } else if (!$.belowthefold(this, settings) &&
+                        !$.rightoffold(this, settings)) {
+                            $(this).trigger("appear");
+                    } else {
+                        if (counter++ > settings.failurelimit) {
+                            return false;
+                        }
+                    }
+                });
+                /* Remove image from array so it is not looped next time. */
+                var temp = $.grep(elements, function(element) {
+                    return !element.loaded;
+                });
+                elements = $(temp);
+            });
+        }
+        
+        this.each(function() {
+            var self = this;
+            
+            /* Save original only if it is not defined in HTML. */
+            if (undefined == $(self).attr("original")) {
+                $(self).attr("original", $(self).attr("src"));     
+            }
+
+            if ("scroll" != settings.event || 
+                    undefined == $(self).attr("src") || 
+                    settings.placeholder == $(self).attr("src") || 
+                    ($.abovethetop(self, settings) ||
+                     $.leftofbegin(self, settings) || 
+                     $.belowthefold(self, settings) || 
+                     $.rightoffold(self, settings) )) {
+                        
+                if (settings.placeholder) {
+                    $(self).attr("src", settings.placeholder);      
+                } else {
+                    $(self).removeAttr("src");
+                }
+                self.loaded = false;
+            } else {
+                self.loaded = true;
+            }
+            
+            /* When appear is triggered load original image. */
+            $(self).one("appear", function() {
+                if (!this.loaded) {
+                    $("<img />")
+                        .bind("load", function() {
+                            $(self)
+                                .hide()
+                                .attr("src", $(self).attr("original"))
+                                [settings.effect](settings.effectspeed);
+                            self.loaded = true;
+                        })
+                        .attr("src", $(self).attr("original"));
+                };
+            });
+
+            /* When wanted event is triggered load original image */
+            /* by triggering appear.                              */
+            if ("scroll" != settings.event) {
+                $(self).bind(settings.event, function(event) {
+                    if (!self.loaded) {
+                        $(self).trigger("appear");
+                    }
+                });
+            }
+        });
+        
+        /* Force initial check if images should appear. */
+        $(settings.container).trigger(settings.event);
+        
+        return this;
+
+    };
+
+    /* Convenience methods in jQuery namespace.           */
+    /* Use as  $.belowthefold(element, {threshold : 100, container : window}) */
+
+    $.belowthefold = function(element, settings) {
+        if (settings.container === undefined || settings.container === window) {
+            var fold = $(window).height() + $(window).scrollTop();
+        } else {
+            var fold = $(settings.container).offset().top + $(settings.container).height();
+        }
+        return fold <= $(element).offset().top - settings.threshold;
+    };
+    
+    $.rightoffold = function(element, settings) {
+        if (settings.container === undefined || settings.container === window) {
+            var fold = $(window).width() + $(window).scrollLeft();
+        } else {
+            var fold = $(settings.container).offset().left + $(settings.container).width();
+        }
+        return fold <= $(element).offset().left - settings.threshold;
+    };
+        
+    $.abovethetop = function(element, settings) {
+        if (settings.container === undefined || settings.container === window) {
+            var fold = $(window).scrollTop();
+        } else {
+            var fold = $(settings.container).offset().top;
+        }
+        return fold >= $(element).offset().top + settings.threshold  + $(element).height();
+    };
+    
+    $.leftofbegin = function(element, settings) {
+        if (settings.container === undefined || settings.container === window) {
+            var fold = $(window).scrollLeft();
+        } else {
+            var fold = $(settings.container).offset().left;
+        }
+        return fold >= $(element).offset().left + settings.threshold + $(element).width();
+    };
+    /* Custom selectors for your convenience.   */
+    /* Use as $("img:below-the-fold").something() */
+
+    $.extend($.expr[':'], {
+        "below-the-fold" : "$.belowthefold(a, {threshold : 0, container: window})",
+        "above-the-fold" : "!$.belowthefold(a, {threshold : 0, container: window})",
+        "right-of-fold"  : "$.rightoffold(a, {threshold : 0, container: window})",
+        "left-of-fold"   : "!$.rightoffold(a, {threshold : 0, container: window})"
+    });
+    
+})(jQuery);
+
+
+
+(function($){
+	function SyndicatedSubwayTiles( config ){
+		var me = this,
+			defaults = {
+				url: 'http://subwaytiles.bennya.com',
+				wrapId: 'content',
+				count: 1,
+				speed: 15,
+				loadFromBottom: 5000, //px from bottom of container before loading next post
+				navEl: 'nav#jsui',
+				placeholderImage: '/images/transparent.gif'
+			};
+
+		for (var key in config) {
+		    defaults[key] = config[key] || defaults[key];
+		}
+
+		for (var key in defaults) {
+		    me[key] = defaults[key];
+		}
+
+		//CONSTANTS
+		// me.data;
+		// me.currentPost = 0;
+		//me.digesting = true;
+		me.nav;
+		me.navUl;
+		me.wrap;
+		me.timeout;
+		me.placeholder = '';
+		me.page = 1;
+		me.getting = false;
+		
+		me.init = function(){
+			
+			me.placeholder = me.url + me.placeholderImage;
+			me.nav = $(me.navEl);
+			me.navUl = me.nav.find('#posts');
+			
+			me.nav.find('#menuToggle').click(function(){
+				me.navUl.slideToggle(200);
+			});
+			
+			if ( !$('#'+me.wrapId).length ) {
+				me.wrap = $('<div />', { id: me.wrapId }).appendTo('body');
+			} else {
+				me.wrap = $('#'+me.wrapId)
+			}
+			
+			me.getPosts();
+
+			//a form of 'infinite' scrolling
+			$(me.wrap).parent().scroll(function(e){
+
+				if (!me.getting){
+					if ( $(this).scrollTop() > $(me.wrap).height() - me.loadFromBottom ) {
+						me.getPosts();	
+					}
+				}
+
+			});
+		};
+
+		me.getPosts = function(){
+			//stop multiple requests
+			me.getting = true;
+			
+			var request = '?json=get_recent_posts&';
+				me.count > 0 ? request += 'count='+me.count+'&' : $.noop();
+				//request += 'page='+me.page+'&';
+				request += 'page='+me.page;
+			
+			console.log('getting', me.url + request )
+			
+			$.getJSON( me.url + request, function(json){
+				console.log('request success', json);
+				
+				if( json.posts.length )
+					$.each( json.posts, me.printPost );
+				
+				me.page += 1;
+			});
+		};
+
+		me.printPost = function(i, post){
+			console.log( 'me.printPost', i, post);
+            
+			var cont = $('<span />', { id: post.slug }).appendTo(me.wrap);
+            
+			$('<a />', {href: '#'+post.slug})
+            	.html( post.title )
+            	.appendTo( me.navUl )
+            	.wrap('<li>');
+
+			var k = 0;
+			
+			me.timeoutPrint( k, cont, post );
+		};
+		
+		me.timeoutPrint = function( l, cont, post ){
+			
+			if ( l < post.attachments.length ) {
+				var attachment = post.attachments[l];
+				
+				if ( attachment.mime_type.indexOf('image') > -1 ){
+                	var full = attachment.images.full;
+					
+					console.log('making image', l, post.attachments.length);
+					
+					$('<img />', {
+						src: full.url,
+						height: full.height,
+						width: full.width
+					}).appendTo( cont )
+					.lazyload({
+			    	 	//placeholder : me.placeholder,
+			    	 	effect      : "fadeIn",
+						container	: me.wrap.parent()
+			    	});
+				}
+				//and call itself again.
+				me.timeout = setTimeout(function(){ me.timeoutPrint(l+1, cont, post); }, me.speed );
+			} else {
+				clearTimeout( me.timeout );
+				me.getting = false;
+			}
+			
+		};
+
+		me.init();
+
+		return me;
+	}
+
+	// function JSUI(){
+	// 	//to do:  get images, and index them by size.  fit them together like a puzzle.
+	// 	var me = this;
+	// 
+	// 	me.nav = $('nav#jsui');
+	// 	me.navUl = me.nav.children('ul#posts');
+	// 	me.count = 1;
+	// 	me.speed = 50; //for the img append timeout
+	// 	me.page = 1;
+	// 	me.getting = false;
+	// 	me.wrap = 'content';
+	// 	//me.url = ST.Url + '/api/';
+	// 	me.url = window.location.href;
+	// 
+	// 	me.init = function(){
+	// 		console.log('initiating');
+	// 		me.uiInit();
+	// 
+	// 		if ( $('#'+me.wrap).length < 1 ) {
+	// 			//$('<div id="'+me.wrap+'"></div>').insertBefore('#end');	
+	// 			$('<div id="'+me.wrap+'"></div>').appendTo('body');	
+	// 		}
+	// 
+	// 		me.getPosts();
+	// 
+	// 		$(document).scroll(function(e){
+	// 
+	// //			console.log('scroll');
+	// //			console.log($('body').height());
+	// //			console.log( $(document).scrollTop() );
+	// //			console.log(e);
+	// 			console.log(me.getting);
+	// 
+	// 			if (!me.getting){
+	// 				if ( $(document).scrollTop() > $('body').height() - 5000 ) {
+	// 					me.getPosts();	
+	// 				}
+	// 			}
+	// 
+	// 		});
+	// 	};
+	// 
+	// 	me.uiInit = function(){
+	// 
+	// 		$('#menuToggle').click(function(){
+	// 
+	// 			me.navUl.slideToggle(200);
+	// 
+	// 		});		
+	// 
+	// 
+	// 
+	// 
+	// 	};
+	// 
+	// 
+	// 
+	// 	me.getPageTitles = function(){};
+	// 
+	// 
+	// 	me.getPosts = function(){
+	// 		//console.log('getPosts');
+	// 
+	// 		me.getting = true;
+	// 
+	// 		var request = '?json=get_recent_posts&';
+	// 			me.count > 0 ? request += 'count='+me.count+'&' : $.noop();
+	// 			request += 'page='+me.page+'&';
+	// 
+	// 		console.log(me.url+request);
+	// 
+	// 		$.getJSON( me.url + request, function(json){
+	// 		//$.get( me.url + request, function(json){
+	// 
+	//         	console.log(json);
+	// 
+	// 	        for ( var i=0; i<json.posts.length; i++ ){
+	// 	            var post = json.posts[i];
+	// 
+	// 	            //console.log(post);
+	// 
+	// 	            $('<span>', { id: post.slug }).appendTo('#'+me.wrap);
+	// 
+	// 	            $('<a>', {href: '#'+post.slug})
+	// 	            	.html( post.title )
+	// 	            	.appendTo( me.navUl )
+	// 	            	.wrap('<li>')
+	// 	            	.click(function(e){
+	// 
+	// 	            		//console.log('nav page link clicked');
+	// 
+	// 	            	});
+	// 
+	// 	            var k=0;
+	// 
+	// 	            var timeoutFunc = function(l, wrap, post){
+	// 
+	// 	            	me.getting = true;
+	// 
+	// 	            	var j = l;
+	// 	            	var thisPost = post;
+	// 
+	// 	            	if ( j < post.attachments.length ) {
+	// 		            	var attachment = post.attachments[j];
+	// 
+	// 		                if ( attachment.mime_type.indexOf('image') > -1 ){
+	// 		                    var full = attachment.images.full,
+	// 		                        img  = '<img src="'+full.url+'" height="'+full.height+'" width="'+full.width+'" />';
+	// 
+	// 		                    //$('#'+me.wrap).append( img );
+	// 		                    $(img).appendTo('#'+wrap).lazyload({
+	// 					    	   placeholder : ST.TemplateUrl + "/images/transparent.gif",
+	// 					    	   effect      : "fadeIn"
+	// 					    	});
+	// 
+	// 		                }//end if
+	// 
+	// 		                setTimeout( function(){ timeoutFunc(j+1, wrap, thisPost); }, me.speed );	
+	// 
+	// 	            	} else {
+	//        			        me.getting = false;	
+	// 	            	}
+	// 	            };
+	// 	            timeoutFunc(k, me.wrap, post);
+	// 
+	// 	        }//end for
+	// 
+	// 	        me.page += 1;
+	// 
+	// 		});//get
+	// 
+	// 
+	// 	};
+	// 
+	// 	return me;
+	// }	
+	// 
+	window['SyndicatedSubwayTiles'] = SyndicatedSubwayTiles;
 	
 })(jQuery);

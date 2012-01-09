@@ -86,6 +86,8 @@ a{
 }
 
 #container {
+	position: relative;
+	z-index: 1;
 }
 
 #header {
@@ -250,5 +252,139 @@ nav#access{
   }
 
 }
+
+#subwayTilesWrap{
+	position: fixed;
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: rgba(255,255,255,0.95);
+	z-index: 2;
+	overflow-y: scroll;
+	display: none;
+	
+	& #closeSubwayTiles{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		@include padding-leader(0.25);
+		@include padding-trailer(0.25);
+		padding-left: 1em;
+		padding-right: 1em;
+		color: #font-color;
+		background: $base-bg;
+		border-right: 1px solid $font-color;
+		border-bottom: 1px solid $font-color;
+		@include opacity(0.8);
+		@include adjust-font-size-to( 14px );
+		cursor: pointer;
+		cursor: hand;
+		
+		&:hover{
+			@include opacity(1);
+			
+			& small{
+				display: inline;
+			}
+		}
+		
+		& small{
+			display: none;
+			margin-left: 1em;
+			//position: absolute;
+			//right: -15em;
+			//top: 0;
+			//width: 14em;
+			//color: $base-bg;
+			//@include padding-leader(0.25);
+		}
+	}
+
+	& #jsui{
+		margin: 0;
+		display: block;
+		width: 16em;
+		background-color:rgba(0,0,0,0.6);
+		color: $font-color;
+		position:fixed;
+		right:0;
+		top:0;
+		z-index: 11;
+
+		& header{
+			display: block;
+			
+			& h4{
+				@include adjust-font-size-to(24px);
+				font-weight:bold;
+				letter-spacing:-2px;
+				@include single-text-shadow(none);
+				margin-left: 1em;
+				margin-right: 1em;
+				@include margin-leader(0.5);
+				@include margin-trailer(0.25);
+				color: lighten( $font-color, 5% );
+				border-bottom:3px solid;
+				font-family: futura, helvetica, arial, sans-serif;
+				cursor:pointer;
+				cursor:hand;
+				text-align:center;
+				
+				&:hover{
+					color: darken( $font-color, 5% );
+				}
+				&:active{
+					color: darken( $font-color, 10% );
+				}
+			}
+		}
+		
+		& ul#posts{
+			@include margin-leader(0.125);
+			@include margin-trailer(0.25);
+			display: block;
+			margin-left: 1em;
+			margin-right: 1em;
+			
+			& li{
+				@include margin-leader(0.5);
+				margin-left: 1em;
+			
+				& a{
+					text-decoration: none;
+				}
+			}
+		}
+		
+		& #menuToggle{
+			display: block;
+			@include margin-leader();
+			@include margin-trailer(0.5);
+			width: 20%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			@include adjust-font-size-to(10px);
+			@include border-radius(2px);
+			cursor: default;
+
+			&:hover{
+				background-color:rgba(255,255,255,0.2);	
+			}
+			&:active{
+				background-color:rgba(255,255,255,0.1);	
+			}
+		}
+	}
+
+	
+	& #subwayTiles{
+		position: relative;
+		z-index: 1;
+	}
+}
+
+#loadSubwayTiles{}
 
 #footer {}

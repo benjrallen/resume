@@ -4,6 +4,8 @@
 
 (function($){
 	
+	var easeTiles = false;
+	
 	$(document).ready(function(){
 		
 		var eyt = new EaseYouTubePlayer({
@@ -25,12 +27,38 @@
 			blocksAreClickable: true
 		});
 
-		var request = '?json=get_recent_posts';
-
-		$.getJSON( 'http://subwaytiles.bennya.com' + request, function(json){
-			console.log('request worked', json);
-		});
+		// var easeTiles = new SyndicatedSubwayTiles({
+		// 	wrapId: 'subwayTiles'
+		// });
+		
+		subwayTiles();
 	});
+	
+	function subwayTiles(){
+		//handle click on the stLink to open up the interface
+		if ( $('#subwayTilesWrap').length ) {
+			var wrap = $('#subwayTilesWrap'),
+				speed = 250;
+			
+			//click link to open
+			$('#loadSubwayTiles').click(function(){
+				if ( !easeTiles ) {
+					easeTiles = new SyndicatedSubwayTiles({
+						wrapId: 'subwayTiles'
+					});
+				}
+				
+				wrap.show( speed );
+			});
+			
+			//click x to close
+			$('#closeSubwayTiles').click(function(){
+				wrap.hide(speed);
+			});
+			
+		} //end if wrap
+	}
+	
 	
 })(jQuery);
 
