@@ -21,7 +21,7 @@
 			dataBlock: '.mapItem',
 			dataAttr: 'ease-data',
 			locationKey: 'location',
-			directionsLink: true,
+			directionsLink: false,
 			blocksAreClickable: true
 		});
 
