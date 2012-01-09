@@ -263,8 +263,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		};
 
 		me.positionPlayer = function(){			
-			//if ( me.player && me.showPlayer && me.PLAYER_READY ) {
-			if ( me.player && me.showPlayer ) {
+			if ( me.player && me.showPlayer && me.PLAYER_READY ) {
 				var	dimensions = me.makePlayerDimensions(),
 					bW = dimensions.baseWidth,
 					bH = dimensions.baseHeight,
@@ -287,9 +286,9 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		};
 		
 		me.loadVideo = function(){
-			console.log( 'me.loadVideo', me.CURRENT_VIDEO, me.player, me.PLAYER_READY);
-			if (me.player) {
-			//if (me.player && me.PLAYER_READY) {
+			//console.log( 'me.loadVideo', me.CURRENT_VIDEO, me.player, me.PLAYER_READY);
+			//if (me.player) {
+			if (me.player && me.PLAYER_READY) {
 				me.showPlayer = true;
 				me.player.loadVideoById( me.CURRENT_VIDEO.id, 0, 'large');
 				me.positionPlayer();
