@@ -5,6 +5,13 @@
 (function($){
 	
 	var easeTiles = false;
+	var isWebkit = true;
+	try{
+		WebKitPoint;
+	} catch(e) {
+		isWebkit = false;
+	}
+	
 	
 	$(document).ready(function(){
 		
@@ -36,7 +43,7 @@
 	
 	function subwayTiles(){
 		//handle click on the stLink to open up the interface, but only do it for webkit cause webkit is awesome
-		if ( $('#subwayTilesWrap').length && WebKitPoint ) {
+		if ( $('#subwayTilesWrap').length && isWebkit ) {
 			var wrap = $('#subwayTilesWrap'),
 				speed = 250;
 			

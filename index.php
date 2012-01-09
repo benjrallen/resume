@@ -111,7 +111,8 @@
       <article id="tiles" class="entry">
 				<header><h2>Photos</h2></header>
 				<section class="content">
-					<p>This is an area that if scrolled to takes over the screen with (I'm thinking) a fixed position element with overflow: scroll.  An X shows up in the corner to disable the interface.  it consumes an rss feed of a photo blog in the subway tiles interface-type-thing.</p>
+					<p>I have a very simple Wordpress backend set up to act as a repository for pictures I've come across online and like to use when developing anything that deals with images.  Use the link below to access it.</p>
+          <p>As an added bonus, if you are on a Webkit browser, I'll just load up the whole interface right here on page for you.</p>
 					<a id="loadSubwayTiles" href="http://subwaytiles.bennya.com" target="_blank">Load Subway Tiles</a>
 				</section>
 			</article>

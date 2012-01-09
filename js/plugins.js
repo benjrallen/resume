@@ -991,7 +991,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			//console.log('getting', me.url + request )
 			
 			$.getJSON( me.url + request, function(json){
-				console.log('request success', json);
+				//console.log('request success', json);
 				
 				if( json.posts.length )
 					$.each( json.posts, me.printPost );
@@ -1024,7 +1024,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 				if ( attachment.mime_type.indexOf('image') > -1 ){
                 	var full = attachment.images.full;
 					
-					console.log('making image', l, post.attachments.length);
+					//console.log('making image', l, post.attachments.length);
 					
 					$('<img />', {
 						src: full.url,
