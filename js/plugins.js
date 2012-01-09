@@ -82,7 +82,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 		me.CURRENT_VIDEO = null;
 		me.player = null;
 		me.showPlayer = false;
-		me.IS_LTE7 = $('.lte7').length;
+		me.IS_LTE8 = $('.lte8').length;
 		
 		me.API_READY = false;
 		me.PLAYER_READY = false;
@@ -406,7 +406,7 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			
 			me.CURRENT_VIDEO = $(this).data('itemData');
 			
-			return ( !me.IS_LTE7 ? me.loadVideo() : window.location.href = me.CURRENT_VIDEO.player['default'] );			
+			return ( !me.IS_LTE8 ? me.loadVideo() : window.location.href = me.CURRENT_VIDEO.player['default'] );			
 		};
 		
 		me.updateStartIndex = function(){
