@@ -12,8 +12,18 @@ window.log = function(){
 // make it safe to use console.log always
 (function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();)b[a]=b[a]||c})(window.console=window.console||{});
 
-
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
+/*!
+ * json2.js - minified
+ */
+this.JSON||(JSON=function(){function k(b){return b<10?"0"+b:b}function o(b){p.lastIndex=0;return p.test(b)?'"'+b.replace(p,function(b){var c=r[b];if(typeof c==="string")return c;return"\\u"+("0000"+(+b.charCodeAt(0)).toString(16)).slice(-4)})+'"':'"'+b+'"'}function l(b,i){var c,d,h,m,g=e,f,a=i[b];a&&typeof a==="object"&&typeof a.toJSON==="function"&&(a=a.toJSON(b));typeof j==="function"&&(a=j.call(i,b,a));switch(typeof a){case "string":return o(a);case "number":return isFinite(a)?String(a):"null";
+case "boolean":case "null":return String(a);case "object":if(!a)return"null";e+=n;f=[];if(typeof a.length==="number"&&!a.propertyIsEnumerable("length")){m=a.length;for(c=0;c<m;c+=1)f[c]=l(c,a)||"null";h=f.length===0?"[]":e?"[\n"+e+f.join(",\n"+e)+"\n"+g+"]":"["+f.join(",")+"]";e=g;return h}if(j&&typeof j==="object"){m=j.length;for(c=0;c<m;c+=1)d=j[c],typeof d==="string"&&(h=l(d,a))&&f.push(o(d)+(e?": ":":")+h)}else for(d in a)Object.hasOwnProperty.call(a,d)&&(h=l(d,a))&&f.push(o(d)+(e?": ":":")+h);
+h=f.length===0?"{}":e?"{\n"+e+f.join(",\n"+e)+"\n"+g+"}":"{"+f.join(",")+"}";e=g;return h}}Date.prototype.toJSON=function(){return this.getUTCFullYear()+"-"+k(this.getUTCMonth()+1)+"-"+k(this.getUTCDate())+"T"+k(this.getUTCHours())+":"+k(this.getUTCMinutes())+":"+k(this.getUTCSeconds())+"Z"};String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()};var q=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
+p=/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,e,n,r={"\u0008":"\\b","\t":"\\t","\n":"\\n","\u000c":"\\f","\r":"\\r",'"':'\\"',"\\":"\\\\"},j;return{stringify:function(b,i,c){var d;n=e="";if(typeof c==="number")for(d=0;d<c;d+=1)n+=" ";else typeof c==="string"&&(n=c);if((j=i)&&typeof i!=="function"&&(typeof i!=="object"||typeof i.length!=="number"))throw Error("JSON.stringify");return l("",{"":b})},parse:function(b,e){function c(b,
+d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.call(a,g)&&(f=c(a,g),f!==void 0?a[g]=f:delete a[g]);return e.call(b,d,a)}var d;q.lastIndex=0;q.test(b)&&(b=b.replace(q,function(b){return"\\u"+("0000"+(+b.charCodeAt(0)).toString(16)).slice(-4)}));if(/^[\],:{}\s]*$/.test(b.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,"@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,"]").replace(/(?:^|:|,)(?:\s*\[)+/g,"")))return d=eval("("+b+")"),typeof e===
+"function"?c({"":d},""):d;throw new SyntaxError("JSON.parse");}}}());
+
+
 (function($){
 
 	function EaseYouTubePlayer(config){
@@ -978,10 +988,10 @@ window.log = function(){
 				//request += 'page='+me.page+'&';
 				request += 'page='+me.page;
 			
-			console.log('getting', me.url + request )
+			//console.log('getting', me.url + request )
 			
 			$.getJSON( me.url + request, function(json){
-				console.log('request success', json);
+				//console.log('request success', json);
 				
 				if( json.posts.length )
 					$.each( json.posts, me.printPost );
@@ -991,7 +1001,7 @@ window.log = function(){
 		};
 
 		me.printPost = function(i, post){
-			console.log( 'me.printPost', i, post);
+			//console.log( 'me.printPost', i, post);
             
 			var cont = $('<span />', { id: post.slug }).appendTo(me.wrap);
             
@@ -1040,143 +1050,6 @@ window.log = function(){
 		return me;
 	}
 
-	// function JSUI(){
-	// 	//to do:  get images, and index them by size.  fit them together like a puzzle.
-	// 	var me = this;
-	// 
-	// 	me.nav = $('nav#jsui');
-	// 	me.navUl = me.nav.children('ul#posts');
-	// 	me.count = 1;
-	// 	me.speed = 50; //for the img append timeout
-	// 	me.page = 1;
-	// 	me.getting = false;
-	// 	me.wrap = 'content';
-	// 	//me.url = ST.Url + '/api/';
-	// 	me.url = window.location.href;
-	// 
-	// 	me.init = function(){
-	// 		console.log('initiating');
-	// 		me.uiInit();
-	// 
-	// 		if ( $('#'+me.wrap).length < 1 ) {
-	// 			//$('<div id="'+me.wrap+'"></div>').insertBefore('#end');	
-	// 			$('<div id="'+me.wrap+'"></div>').appendTo('body');	
-	// 		}
-	// 
-	// 		me.getPosts();
-	// 
-	// 		$(document).scroll(function(e){
-	// 
-	// //			console.log('scroll');
-	// //			console.log($('body').height());
-	// //			console.log( $(document).scrollTop() );
-	// //			console.log(e);
-	// 			console.log(me.getting);
-	// 
-	// 			if (!me.getting){
-	// 				if ( $(document).scrollTop() > $('body').height() - 5000 ) {
-	// 					me.getPosts();	
-	// 				}
-	// 			}
-	// 
-	// 		});
-	// 	};
-	// 
-	// 	me.uiInit = function(){
-	// 
-	// 		$('#menuToggle').click(function(){
-	// 
-	// 			me.navUl.slideToggle(200);
-	// 
-	// 		});		
-	// 
-	// 
-	// 
-	// 
-	// 	};
-	// 
-	// 
-	// 
-	// 	me.getPageTitles = function(){};
-	// 
-	// 
-	// 	me.getPosts = function(){
-	// 		//console.log('getPosts');
-	// 
-	// 		me.getting = true;
-	// 
-	// 		var request = '?json=get_recent_posts&';
-	// 			me.count > 0 ? request += 'count='+me.count+'&' : $.noop();
-	// 			request += 'page='+me.page+'&';
-	// 
-	// 		console.log(me.url+request);
-	// 
-	// 		$.getJSON( me.url + request, function(json){
-	// 		//$.get( me.url + request, function(json){
-	// 
-	//         	console.log(json);
-	// 
-	// 	        for ( var i=0; i<json.posts.length; i++ ){
-	// 	            var post = json.posts[i];
-	// 
-	// 	            //console.log(post);
-	// 
-	// 	            $('<span>', { id: post.slug }).appendTo('#'+me.wrap);
-	// 
-	// 	            $('<a>', {href: '#'+post.slug})
-	// 	            	.html( post.title )
-	// 	            	.appendTo( me.navUl )
-	// 	            	.wrap('<li>')
-	// 	            	.click(function(e){
-	// 
-	// 	            		//console.log('nav page link clicked');
-	// 
-	// 	            	});
-	// 
-	// 	            var k=0;
-	// 
-	// 	            var timeoutFunc = function(l, wrap, post){
-	// 
-	// 	            	me.getting = true;
-	// 
-	// 	            	var j = l;
-	// 	            	var thisPost = post;
-	// 
-	// 	            	if ( j < post.attachments.length ) {
-	// 		            	var attachment = post.attachments[j];
-	// 
-	// 		                if ( attachment.mime_type.indexOf('image') > -1 ){
-	// 		                    var full = attachment.images.full,
-	// 		                        img  = '<img src="'+full.url+'" height="'+full.height+'" width="'+full.width+'" />';
-	// 
-	// 		                    //$('#'+me.wrap).append( img );
-	// 		                    $(img).appendTo('#'+wrap).lazyload({
-	// 					    	   placeholder : ST.TemplateUrl + "/images/transparent.gif",
-	// 					    	   effect      : "fadeIn"
-	// 					    	});
-	// 
-	// 		                }//end if
-	// 
-	// 		                setTimeout( function(){ timeoutFunc(j+1, wrap, thisPost); }, me.speed );	
-	// 
-	// 	            	} else {
-	//        			        me.getting = false;	
-	// 	            	}
-	// 	            };
-	// 	            timeoutFunc(k, me.wrap, post);
-	// 
-	// 	        }//end for
-	// 
-	// 	        me.page += 1;
-	// 
-	// 		});//get
-	// 
-	// 
-	// 	};
-	// 
-	// 	return me;
-	// }	
-	// 
 	window['SyndicatedSubwayTiles'] = SyndicatedSubwayTiles;
 	
 })(jQuery);
