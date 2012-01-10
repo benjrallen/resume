@@ -145,7 +145,7 @@ nav#access{
   & article{
     //@include padding-leader;
     @include padding-trailer( 2.5 );
-    //@include padding-leader( 0 );
+    @include padding-leader( 3.5 );
     
     & header{
       border-top: 1px solid darken( $base-bg, 15% );
@@ -171,11 +171,11 @@ nav#access{
 	    @include padding-trailer();
 	    padding-left: 1em;
 	    padding-right: 1em;
-    
-	    & #videoBlocks{
-	      width: 42%;
-	      @include float-right;
-	    }
+	
+		& h3{
+			@include open-sans;
+			@include adjust-font-size-to( 20px );
+		}
 
     }
 
@@ -193,14 +193,26 @@ nav#access{
 		@include float-right;
 	}
 
+	&#work{
+		& p{
+			@include adjust-font-size-to(16px);
+		}
+
+		& h3{
+			@include padding-trailer( 0.25 );
+			@include margin-trailer( 0.25 );
+			padding-left: 0.5em;
+			border-bottom: 1px solid darken( $font-color, 50% );
+		}
+	}
+
 	&#videos{
 		
 		& .text{
-			@include float-left;
 			width: 50%;
 
 			& p{
-				@include adjust-font-size-to( 28px, 1 );
+				@include adjust-font-size-to( 24px, 1 );
 		
 				& small{
 					@include adjust-font-size-to( 8px );
@@ -208,6 +220,11 @@ nav#access{
 				}
 			}
 		}
+
+	    & #videoBlocks{
+	      width: 42%;
+	      @include float-right;
+	    }
 	}
 
 	&#map{

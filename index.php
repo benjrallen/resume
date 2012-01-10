@@ -80,7 +80,7 @@
       <article id="work" class="entry">
 				<header><h2>Work</h2></header>
 				<section class="content">
-					<p>Here are some sites that I have recently developed.</p>
+					<p>Some sites that I have recently developed:</p>
 					
 					<div class="left sitelist">
 					  <h3>Wordpress Sites</h3>
@@ -123,9 +123,10 @@
       <article id="videos" class="entry">
 				<header><h2>Videos</h2></header>
 				<section class="content">
-				  <div class="text">
+				  <div class="text left">
 					  <p>Final Cut and I go way back.</p>
 					  <p><small>*Crappy cameras and I go even further back.</small></p>
+					  <p>Watch some videos >></p>
 					</div>
 					
 					<div id="easeVideoPlayer"></div>
