@@ -123,7 +123,11 @@
       <article id="videos" class="entry">
 				<header><h2>Videos</h2></header>
 				<section class="content">
-					<p>Consume my youtube or vimeo feed</p>
+				  <div class="text">
+					  <p>Final Cut and I go way back.</p>
+					  <p><small>*Crappy cameras and I go even further back.</small></p>
+					</div>
+					
 					<div id="easeVideoPlayer"></div>
 
           <div id="videoBlocks">
@@ -134,10 +138,8 @@
 			</article>
 
       <article id="map" class="entry">
-				<header><h2>Where I've been. Where I'll be</h2></header>
+				<header><h2>Where I've been.</h2></header>
 				<section class="content">
-
-					<p>Map with past locations and a star on your city</p>
 
           <div id="gmapCont"></div>
           
@@ -203,12 +205,7 @@
             
             echo '</div>';
           }
-          
-          //dataCont: '.entry .mapList',
-    			//dataBlock: '.mapItem',
-    			//dataAttr: 'ease-data',
-    			//locationKey: 'ease_address',
-    			
+              			
     			?>
     			</div>
           

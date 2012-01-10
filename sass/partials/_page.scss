@@ -145,7 +145,7 @@ nav#access{
   & article{
     //@include padding-leader;
     @include padding-trailer( 2.5 );
-    @include padding-leader( 1.5 );
+    //@include padding-leader( 0 );
     
     & header{
       border-top: 1px solid darken( $base-bg, 15% );
@@ -167,7 +167,7 @@ nav#access{
     
     & .content{
 	    @include adjust-font-size-to( 16px );
-	    @include padding-leader();
+	    //@include padding-leader();
 	    @include padding-trailer();
 	    padding-left: 1em;
 	    padding-right: 1em;
@@ -181,6 +181,7 @@ nav#access{
 
 	& p{
 		display: block;
+		@include padding-leader(0.5);
 		@include padding-trailer(0.5);
 	}
 
@@ -192,6 +193,23 @@ nav#access{
 		@include float-right;
 	}
 
+	&#videos{
+		
+		& .text{
+			@include float-left;
+			width: 50%;
+
+			& p{
+				@include adjust-font-size-to( 28px, 1 );
+		
+				& small{
+					@include adjust-font-size-to( 8px );
+					font-style: italic;
+				}
+			}
+		}
+	}
+
 	&#map{
 		& #gmapCont, & .mapList{
 			display: inline-block;
@@ -199,11 +217,46 @@ nav#access{
 		}
 		& #gmapCont{
 			//@include float-left;
-			width: 60%;
+			width: 65%;
 			height: 400px;
+		}
+		& .mapInfoDom{
+			color: $base-bg;
+			text-align: center;
+		}
+		& p{
+			@include adjust-font-size-to(18px);
+			padding-left: 6em;
+			padding-right: 6em;
 		}
 		& .mapList{
 			//width: 20%;
+			margin-left: 1em;
+			
+			& .mapItem{
+				//background: #bad;
+				@include padding-leader(0.5);
+				@include padding-trailer(0.5);
+				//@include margin-trailer(0.25);
+				cursor: pointer;
+				cursor: hand;
+				padding-left: 1em;
+				padding-right: 1em;
+				@include border-radius( 0 0 4px 4px );
+				border-top: 1px solid darken( $font-color, 30% );
+				
+				&:hover{
+					background: darken( $base-bg, 5% );
+				}
+			}
+			
+			& .placeName{
+				@include adjust-font-size-to( 16px );
+			}
+			
+			& .placeWhen{
+				display: none;
+			}
 		}
 	}
     
@@ -467,6 +520,11 @@ nav#access{
 #loadSubwayTiles{}
 
 #footer {}
+
+.placeName{
+	@include single-text-shadow(none);
+	font-weight: 400;
+}
 
 .ease-data{
 	display: none;

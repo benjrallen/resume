@@ -430,7 +430,6 @@ nav#access .menu li a:hover {
 /* line 145, ../sass/partials/_page.scss */
 #main article {
   padding-bottom: 3.077em;
-  padding-top: 1.846em;
 }
 /* line 150, ../sass/partials/_page.scss */
 #main article header {
@@ -457,7 +456,6 @@ nav#access .menu li a:hover {
 #main article .content {
   font-size: 1.231em;
   line-height: 2em;
-  padding-top: 1.231em;
   padding-bottom: 1.231em;
   padding-left: 1em;
   padding-right: 1em;
@@ -471,44 +469,107 @@ nav#access .menu li a:hover {
 /* line 182, ../sass/partials/_page.scss */
 #main article p {
   display: block;
+  padding-top: 0.615em;
   padding-bottom: 0.615em;
 }
-/* line 187, ../sass/partials/_page.scss */
+/* line 188, ../sass/partials/_page.scss */
 #main article .left {
   display: inline;
   float: left;
 }
-/* line 191, ../sass/partials/_page.scss */
+/* line 192, ../sass/partials/_page.scss */
 #main article .right {
   display: inline;
   float: right;
 }
-/* line 196, ../sass/partials/_page.scss */
+/* line 198, ../sass/partials/_page.scss */
+#main article#videos .text {
+  display: inline;
+  float: left;
+  width: 50%;
+}
+/* line 202, ../sass/partials/_page.scss */
+#main article#videos .text p {
+  font-size: 2.154em;
+  line-height: 0.571em;
+}
+/* line 205, ../sass/partials/_page.scss */
+#main article#videos .text p small {
+  font-size: 0.615em;
+  line-height: 2em;
+  font-style: italic;
+}
+/* line 214, ../sass/partials/_page.scss */
 #main article#map #gmapCont, #main article#map .mapList {
   display: inline-block;
   vertical-align: top;
 }
-/* line 200, ../sass/partials/_page.scss */
+/* line 218, ../sass/partials/_page.scss */
 #main article#map #gmapCont {
-  width: 60%;
+  width: 65%;
   height: 400px;
 }
-/* line 210, ../sass/partials/_page.scss */
+/* line 223, ../sass/partials/_page.scss */
+#main article#map .mapInfoDom {
+  color: #2c2c2c;
+  text-align: center;
+}
+/* line 227, ../sass/partials/_page.scss */
+#main article#map p {
+  font-size: 1.385em;
+  line-height: 1.778em;
+  padding-left: 6em;
+  padding-right: 6em;
+}
+/* line 232, ../sass/partials/_page.scss */
+#main article#map .mapList {
+  margin-left: 1em;
+}
+/* line 236, ../sass/partials/_page.scss */
+#main article#map .mapList .mapItem {
+  padding-top: 0.615em;
+  padding-bottom: 0.615em;
+  cursor: pointer;
+  cursor: hand;
+  padding-left: 1em;
+  padding-right: 1em;
+  -moz-border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+  -o-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  -khtml-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid #919191;
+}
+/* line 248, ../sass/partials/_page.scss */
+#main article#map .mapList .mapItem:hover {
+  background: #1f1f1f;
+}
+/* line 253, ../sass/partials/_page.scss */
+#main article#map .mapList .placeName {
+  font-size: 1.231em;
+  line-height: 2em;
+}
+/* line 257, ../sass/partials/_page.scss */
+#main article#map .mapList .placeWhen {
+  display: none;
+}
+/* line 263, ../sass/partials/_page.scss */
 #main article#who {
   text-align: center;
 }
-/* line 213, ../sass/partials/_page.scss */
+/* line 266, ../sass/partials/_page.scss */
 #main article#who p {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 218, ../sass/partials/_page.scss */
+/* line 271, ../sass/partials/_page.scss */
 #main article#who p.top {
   font-size: 2.154em;
   line-height: 1.143em;
 }
-/* line 223, ../sass/partials/_page.scss */
+/* line 276, ../sass/partials/_page.scss */
 #main article#who #resumeLink {
   display: block;
   width: 40%;
@@ -517,16 +578,16 @@ nav#access .menu li a:hover {
   margin-right: auto;
   margin-bottom: 2.462em;
 }
-/* line 231, ../sass/partials/_page.scss */
+/* line 284, ../sass/partials/_page.scss */
 #main article#who #resumeLink:hover {
   text-decoration: none;
 }
-/* line 235, ../sass/partials/_page.scss */
+/* line 288, ../sass/partials/_page.scss */
 #main article#who #resumeLink:hover span.line2 {
   color: #1f628f;
   top: 0.5em;
 }
-/* line 242, ../sass/partials/_page.scss */
+/* line 295, ../sass/partials/_page.scss */
 #main article#who #resumeLink span {
   display: inline-block;
   cursor: pointer;
@@ -534,13 +595,13 @@ nav#access .menu li a:hover {
   font-weight: 800;
   text-transform: uppercase;
 }
-/* line 249, ../sass/partials/_page.scss */
+/* line 302, ../sass/partials/_page.scss */
 #main article#who #resumeLink span.line1 {
   font-size: 3.385em;
   line-height: 1.091em;
   letter-spacing: 3px;
 }
-/* line 253, ../sass/partials/_page.scss */
+/* line 306, ../sass/partials/_page.scss */
 #main article#who #resumeLink span.line2 {
   background: url("../images/arrow.png") no-repeat;
   background-size: 100%;
@@ -569,7 +630,7 @@ nav#access .menu li a:hover {
   transition-timing-function: ease-in-out;
 }
 
-/* line 318, ../sass/partials/_page.scss */
+/* line 371, ../sass/partials/_page.scss */
 .lte8 #main article#who #resumeLink span.line2 {
   background: none;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/arrow.png', 			sizingMethod='scale');
@@ -578,7 +639,7 @@ nav#access .menu li a:hover {
 			sizingMethod='scale')";
 }
 
-/* line 334, ../sass/partials/_page.scss */
+/* line 387, ../sass/partials/_page.scss */
 #subwayTilesWrap {
   position: fixed;
   display: block;
@@ -589,7 +650,7 @@ nav#access .menu li a:hover {
   overflow-y: scroll;
   display: none;
 }
-/* line 344, ../sass/partials/_page.scss */
+/* line 397, ../sass/partials/_page.scss */
 #subwayTilesWrap #closeSubwayTiles {
   position: fixed;
   top: 0;
@@ -608,21 +669,21 @@ nav#access .menu li a:hover {
   cursor: pointer;
   cursor: hand;
 }
-/* line 362, ../sass/partials/_page.scss */
+/* line 415, ../sass/partials/_page.scss */
 #subwayTilesWrap #closeSubwayTiles:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 365, ../sass/partials/_page.scss */
+/* line 418, ../sass/partials/_page.scss */
 #subwayTilesWrap #closeSubwayTiles:hover small {
   display: inline;
 }
-/* line 370, ../sass/partials/_page.scss */
+/* line 423, ../sass/partials/_page.scss */
 #subwayTilesWrap #closeSubwayTiles small {
   display: none;
   margin-left: 1em;
 }
-/* line 382, ../sass/partials/_page.scss */
+/* line 435, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui {
   margin: 0;
   display: block;
@@ -634,11 +695,11 @@ nav#access .menu li a:hover {
   top: 0;
   z-index: 11;
 }
-/* line 393, ../sass/partials/_page.scss */
+/* line 446, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui header {
   display: block;
 }
-/* line 396, ../sass/partials/_page.scss */
+/* line 449, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui header h4 {
   font-size: 1.846em;
   line-height: 1.333em;
@@ -656,15 +717,15 @@ nav#access .menu li a:hover {
   cursor: hand;
   text-align: center;
 }
-/* line 412, ../sass/partials/_page.scss */
+/* line 465, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui header h4:hover {
   color: #d0d0d0;
 }
-/* line 415, ../sass/partials/_page.scss */
+/* line 468, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui header h4:active {
   color: #c4c4c4;
 }
-/* line 421, ../sass/partials/_page.scss */
+/* line 474, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui ul#posts {
   margin-top: 0.154em;
   margin-bottom: 0.308em;
@@ -672,16 +733,16 @@ nav#access .menu li a:hover {
   margin-left: 1em;
   margin-right: 1em;
 }
-/* line 428, ../sass/partials/_page.scss */
+/* line 481, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui ul#posts li {
   margin-top: 0.615em;
   margin-left: 1em;
 }
-/* line 432, ../sass/partials/_page.scss */
+/* line 485, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui ul#posts li a {
   text-decoration: none;
 }
-/* line 438, ../sass/partials/_page.scss */
+/* line 491, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui #menuToggle {
   display: block;
   margin-top: 1.231em;
@@ -700,21 +761,27 @@ nav#access .menu li a:hover {
   border-radius: 2px;
   cursor: default;
 }
-/* line 450, ../sass/partials/_page.scss */
+/* line 503, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui #menuToggle:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-/* line 453, ../sass/partials/_page.scss */
+/* line 506, ../sass/partials/_page.scss */
 #subwayTilesWrap #jsui #menuToggle:active {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 460, ../sass/partials/_page.scss */
+/* line 513, ../sass/partials/_page.scss */
 #subwayTilesWrap #subwayTiles {
   position: relative;
   z-index: 1;
 }
 
-/* line 470, ../sass/partials/_page.scss */
+/* line 523, ../sass/partials/_page.scss */
+.placeName {
+  text-shadow: none;
+  font-weight: 400;
+}
+
+/* line 528, ../sass/partials/_page.scss */
 .ease-data {
   display: none;
 }

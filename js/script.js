@@ -20,7 +20,7 @@
 		});
 		
 		var eMap = new EaseMap({
-			zoom: 11,
+			zoom: 2,
 			streetViewControl: true,
 			fitMarkers: true,
 			//now center on tulsa cause we live in tulsa

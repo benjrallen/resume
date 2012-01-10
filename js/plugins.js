@@ -647,6 +647,10 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			var marker = me.markers[ $(this).attr('markerIndex') ],
 				coords = { latLng: marker.position };
 			
+			//at least put the map a little bit lower
+			if( me.map.getZoom() < me.minZoom )
+				me.map.setZoom( me.minZoom );
+
 			//console.log('me.handleBlockClick', e, this, marker, coords);
 			return me.handleMarkerClick.apply( marker, [coords] );
 		};
@@ -674,10 +678,6 @@ d){var g,f,a=b[d];if(a&&typeof a==="object")for(g in a)Object.hasOwnProperty.cal
 			
 			me.infowindow.setContent( content );				
 									
-			//at least put the map a little bit lower
-			if( me.map.getZoom() < me.minZoom )
-				me.map.setZoom( me.minZoom );
-
 			me.infowindow.open(me.map, this);
 			
 		};
